@@ -2,7 +2,7 @@
 <br><br>
 <h3>Form Edit Awesome</h3>
 <hr>
-<form (ngSubmit)="edit()" [formGroup]="editForm">
+<form (ngSubmit)="add()" [formGroup]="addForm">
   <div class="form-group">
     <label>tag</label>
     <input type="text" class="form-control" formControlName="tag">
@@ -16,8 +16,6 @@
       <input type="text" class="form-control" formControlName="descriptions">
     </div>
 
-    <button class="btn btn-info">Update Awesome</button>
-    <a  [routerLink]="['/awesomes']" (click)="delete()" class="btn btn-danger">Delete</a>
+    <button class="btn btn-info">Add Awesome</button>
   </div>
 </form>
-

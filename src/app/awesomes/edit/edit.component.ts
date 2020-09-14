@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AwesomeService} from '../../services/awesome.service';
 import {ActivatedRoute, Router} from '@angular/router';
 
@@ -39,11 +39,14 @@ export class EditComponent implements OnInit {
       this.router.navigate(['awesomes']);
     });
   }
+
   // tslint:disable-next-line:typedef
-  delete (){
-    this.awesomeService.delete(this.id).subscribe(data => {
-      this.router.navigate(['awesomes']);
-    });
+  delete() {
+    if (confirm('Are you sure')) {
+      this.awesomeService.delete(this.id).subscribe(data => {
+        this.router.navigate(['awesomes']);
+      });
+    }
   }
 
 }

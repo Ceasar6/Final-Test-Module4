@@ -26,4 +26,7 @@ export class AwesomeService {
   delete(id): Observable<any>{
     return  this.http.delete(this.url + '/' + id);
   }
+  add(awesome): Observable<any>{
+    return  this.http.post(this.url, awesome);
+  }
 }
