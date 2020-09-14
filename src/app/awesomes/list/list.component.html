@@ -1,0 +1,19 @@
+<br>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Tag</th>
+    <th scope="col">URL</th>
+    <th scope="col">Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let awesome of awesomes; let i = index">
+    <th scope="row">{{i + 1}}</th>
+    <td>{{awesome.tag}}</td>
+    <td><a [routerLink]="['/edit',awesome.id]"> {{awesome.url}}</a> </td>
+    <td>{{awesome.descriptions}}</td>
+  </tr>
+  </tbody>
+</table>
